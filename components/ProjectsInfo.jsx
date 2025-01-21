@@ -8,14 +8,14 @@ const ProjectsInfo = ({ currentStage, position3D, rotation }) => {
 
   useEffect(() => {
     if (position3D) {
-      // Adjust position based on rotation
+      
       const rotatedPosition = new THREE.Vector3(position3D.x, position3D.y, position3D.z);
       rotatedPosition.applyEuler(new THREE.Euler(rotation.x, rotation.y, rotation.z, 'XYZ')); // Apply the rotation to the position
 
-      // Convert the 3D position of the model to screen-space coordinates
+     
       const vector = rotatedPosition.project(camera);
 
-      // Convert normalized device coordinates to pixel values
+      
       const x = (vector.x * 0.5 + 0.5) * size.width;
       const y = (vector.y * -0.5 + 0.5) * size.height;
 
@@ -27,10 +27,10 @@ const ProjectsInfo = ({ currentStage, position3D, rotation }) => {
     <div
       className="info-box"
       style={{
-        left: `${position2D[0]}px`, // Set position based on screen coordinates
+        left: `${position2D[0]}px`, 
         top: `${position2D[1]}px`,
-        position: 'absolute', // Absolute position relative to the screen
-        pointerEvents: 'none', // Prevent interference with 3D interactions
+        position: 'absolute', 
+        pointerEvents: 'none', 
       }}
     >
       {renderContent[currentStage]}
