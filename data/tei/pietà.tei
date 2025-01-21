@@ -1,0 +1,37 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Lamentazioni 1:12</title>
+                <author>Geremia</author>
+            </titleStmt>
+            <publicationStmt>
+                <p>Museo Digitale</p>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl>Lamentations 1:12 (NIV)</bibl>
+                 <bibl>The Septuagint, Exodus 3:11</bibl>
+                  <bibl>Sir Lancelot Charles Lee Brenton (translator)</bibl>
+            </sourceDesc>
+        </fileDesc>
+         <profileDesc>
+            <langUsage>
+             <language ident="grc">Greco Antico</language>
+            </langUsage>
+            <creation>
+               <date type="timePeriod">VI secolo. a.C. circa</date>
+               <rs type="workType">Verso Biblico</rs>
+            </creation>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+             <div type="originalQuote">
+               <l>καὶ εἶπεν Μωυσῆς πρὸς τὸν θεόν· τίς εἰμι ἐγώ, ὅτι πορεύσομαι πρὸς Φαραώ, καὶ ὅτι ἐξάξω τοὺς υἱοὺς Ἰσραὴλ ἐξ Αἰγύπτου;</l>
+            </div>
+           <div type="translation">
+                <p>“Is it nothing to you, all you who pass by? Look around and see. Is any suffering like my suffering, that was inflicted on me, that the Lord brought on me in the day of his fierce anger?”</p>
+            </div>
+        </body>
+    </text>
+</TEI>

@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { a } from "@react-spring/three";
@@ -6,25 +6,27 @@ import * as THREE from "three";
 
 import giamboScene from "../assets/3d/giambo.glb";
 
-const Giambo = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
+const Giambo = ({ isRotating: initialRotating, setIsRotating, onStageChange = () => {}, ...props }) => {
   const giamboRef = useRef();
   const { gl, viewport, scene } = useThree();
   const { nodes } = useGLTF(giamboScene);
+  const [currentStage, setCurrentStage] = useState(1);
+  const [isRotating, setIsRotatingLocal] = useState(initialRotating);
 
   // Add a neutral material
   const neutralMaterial = new THREE.MeshStandardMaterial({
-    color: "#d4d4d4", // Neutral light gray for visibility
-    roughness: 0.5, // Balanced roughness
-    metalness: 0.2, // Slight metallic effect for subtle shine
+    color: "#d4d4d4",
+    roughness: 0.5,
+    metalness: 0.2,
   });
 
   // Add lights to enhance visibility
   useEffect(() => {
     const directionalLight = new THREE.DirectionalLight("#ffffff", 1.2);
-    directionalLight.position.set(2, 5, 2); // Above and slightly to the front
+    directionalLight.position.set(2, 5, 2);
     scene.add(directionalLight);
 
-    const ambientLight = new THREE.AmbientLight("#ffffff", 0.6); // Softer, overall illumination
+    const ambientLight = new THREE.AmbientLight("#ffffff", 0.6);
     scene.add(ambientLight);
 
     return () => {
@@ -39,7 +41,7 @@ const Giambo = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
   const handlePointerDown = (e) => {
     e.stopPropagation();
     e.preventDefault();
-    setIsRotating(true);
+    setIsRotatingLocal(true);
 
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
 
@@ -49,7 +51,7 @@ const Giambo = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
   const handlePointerUp = (e) => {
     e.stopPropagation();
     e.preventDefault();
-    setIsRotating(false);
+    setIsRotatingLocal(false);
   };
 
   const handlePointerMove = (e) => {
@@ -69,25 +71,23 @@ const Giambo = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
 
   const handleKeyDown = (e) => {
     if (e.key === "ArrowLeft") {
-      if (!isRotating) setIsRotating(true);
+      if (!isRotating) setIsRotatingLocal(true);
       giamboRef.current.rotation.y += 0.01 * Math.PI;
     } else if (e.key === "ArrowRight") {
-      if (!isRotating) setIsRotating(true);
+      if (!isRotating) setIsRotatingLocal(true);
       giamboRef.current.rotation.y -= 0.01 * Math.PI;
     }
   };
 
   const handleKeyUp = (e) => {
     if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
-      setIsRotating(false);
+      setIsRotatingLocal(false);
     }
   };
 
   const calculateStage = (rotationY) => {
-    // Normalize rotation to 0 - 2π
     const normalizedRotation = (rotationY + Math.PI * 2) % (Math.PI * 2);
 
-    // Divide into 4 stages (quadrants)
     if (normalizedRotation < Math.PI / 2) return 1;
     if (normalizedRotation < Math.PI) return 2;
     if (normalizedRotation < (3 * Math.PI) / 2) return 3;
@@ -105,9 +105,9 @@ const Giambo = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
       giamboRef.current.rotation.y += rotationSpeed.current;
     }
 
-    // Update current stage based on rotation
     const stage = calculateStage(giamboRef.current.rotation.y);
     setCurrentStage(stage);
+      onStageChange(stage);
   });
 
   useEffect(() => {
@@ -126,6 +126,7 @@ const Giambo = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
       document.removeEventListener("keyup", handleKeyUp);
     };
   }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
+
 
   return (
     <a.group ref={giamboRef} {...props}>

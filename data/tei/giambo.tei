@@ -1,0 +1,47 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Lo scudo di Ercole</title>
+                <author>Attribuito ad Esiodo</author>
+            </titleStmt>
+            <publicationStmt>
+                <p>Museo Digitale</p>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl type="url" target="http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0127">Lines 168-173 of The Shield of Heracles</bibl>
+                <bibl>Hesiod, Homeric Hymns, Epic Cycle, Homerica</bibl>
+                <bibl>Hugh G. Evelyn-White (translator)</bibl>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <langUsage>
+                <language ident="grc">Greco Antico</language>
+            </langUsage>
+            <creation>
+                <date type="timePeriod">Periodo Arcaico</date>
+                <rs type="workType">Poema Epico</rs>
+            </creation>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="ancientGreek">
+                <l>καὶ δὴ τὸν χρυσέην κεφαλὴν φέρε λέοντος</l>
+                <l>δεινοῦ, καρτερός τε καὶ ἀμφότερον χερὸς ἔργα</l>
+                <l>αἰὲν ἑτοιμάζων, ἀεικὲς τέρας· οἱ δ᾽ ἄρα πάντες</l>
+                <l>θεσπέσι᾽ ἀθρήσαντες ἀγάσσαντο κρατερόθυμον</l>
+                <l>ἄνδρα· λύθεν δὲ φόβος, θάρσησε δὲ θυμός</l>
+                <l>πάντων, ἐν στήθεσσι.</l>
+            </div>
+            <div type="translation">
+                <p>And indeed, he carried the golden head of the lion,</p>
+                <p>terrible, and mighty, his hands ready for work on either side,</p>
+                <p>an ugly monster. And then all of them,</p>
+                <p>gazing at the wonders, admired the stout-hearted</p>
+                <p>man; and fear was loosed, and courage grew in the hearts</p>
+                <p>of all, in their chests.</p>
+            </div>
+        </body>
+    </text>
+</TEI>

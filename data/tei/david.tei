@@ -1,0 +1,52 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Estratto della storia di Davide e Golia</title>
+                <author>Sconosciuto</author>
+            </titleStmt>
+            <publicationStmt>
+                <p>Museo Digitale</p>
+            </publicationStmt>
+            <sourceDesc>
+                 <bibl>Primo libro di Samuele 17:4</bibl>
+                 <bibl>Sir Lancelot Charles Lee Brenton</bibl>
+            </sourceDesc>
+        </fileDesc>
+         <profileDesc>
+            <langUsage>
+             <language ident="grc">Greco Antico</language>
+            </langUsage>
+            <creation>
+               <date type="timePeriod">III-II secolo a.C. circa</date>
+                <rs type="workType">Verso Biblico</rs>
+            </creation>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+           <ab>
+               <originalQuote>καὶ ἐξῆλθεν ἀνὴρ ὁ μαχητὴς ἐκ τῶν παρατάξεων τῶν ἀλλοφύλων, Γολιάθ τοὔνομα αὐτῷ, ἐκ Γεθ, τὸ ὕψος αὐτοῦ τεσσάρων πηχῶν καὶ σπιθαμῆς.</originalQuote>
+           </ab>
+           <ab>
+                 <quote>And there went out a champion out of the camp of the Philistines, Goliath was his name, of Geth, whose height was four cubits and a span.</quote>
+           </ab>
+            <ab>
+                <note>Riguardo al testo</note>
+                   <author>
+                        <persName>Sconosciuto</persName>
+                    </author>
+                   <work>
+                        <title>Primo Libro di Samuele 17:4</title>
+                     </work>
+                    <location>Antica Israele</location>
+                    <date>III-II secolo a.C. </date>
+                    <translationSource>The Septuagint, First Book of Samuel 17:4</translationSource>
+                     <translationBy>
+                           <persName>Sir Lancelot Charles Lee Brenton</persName>
+                      </translationBy>
+                   <originalLanguage>Greco Antico</originalLanguage>
+            </ab>
+        </body>
+    </text>
+</TEI>

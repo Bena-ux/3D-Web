@@ -1,0 +1,37 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Il regno di Onfale</title>
+                <author>Diodoro Siculo</author>
+            </titleStmt>
+            <publicationStmt>
+                <p>Museo Digitale</p>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl>Da "Bibliotheca Historica" di Diodoro Siculo</bibl>
+                 <bibl>Diodorus Siculus, The Library of History, Volume 2: Books 2.35-4.58</bibl>
+                 <bibl>C.H Oldfather (translator)</bibl>
+            </sourceDesc>
+        </fileDesc>
+         <profileDesc>
+            <langUsage>
+              <language ident="grc">Greco Antico</language>
+            </langUsage>
+            <creation>
+               <date type="timePeriod">I secolo a.C. circa</date>
+               
+            </creation>
+   </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="originalQuote">
+                <l>καὶ τὴν βασιλείαν παραλαβοῦσα τῶν Λυδῶν ἐβασίλευσε.</l>
+            </div>
+            <div type="translation">
+                <p>and having received the kingdom of the Lydians, she reigned.</p>
+            </div>
+        </body>
+    </text>
+</TEI>

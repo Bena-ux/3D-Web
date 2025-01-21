@@ -1,0 +1,39 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Lo scudo di Ercole</title>
+                <author>Attribuito ad Esiodo</author>
+            </titleStmt>
+            <publicationStmt>
+                <p>Museo Digitale</p>
+            </publicationStmt>
+            <sourceDesc>
+                <bibl>Lines 159-160 of The Shield of Heracles</bibl>
+                <bibl>http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0127</bibl>
+                <bibl>Hugh G. Evelyn-White (translator)</bibl>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+            <langUsage>
+                <language ident="grc">Greco Antico</language>
+            </langUsage>
+            <creation>
+                <date type="timePeriod">Periodo Arcaico</date>
+                <rs type="workType">Poema Epico</rs>
+            </creation>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="ancientGreek">
+                <l>αὐτὰρ ὁ φοινικόπεδον περὶ χρωτὶ λέοντος</l>
+                <l>ἕλκε δέρμα, ποσὶν δὲ περὶ χροῒ κυκλὸν ἔχασκεν·</l>
+            </div>
+            <div type="translation">
+                <p>But round his body he dragged the skin of a lion,</p>
+                <p>blood-red, and about his feet it gaped in a circle;</p>
+            </div>
+        </body>
+    </text>
+</TEI>

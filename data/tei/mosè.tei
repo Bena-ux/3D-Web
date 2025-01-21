@@ -1,0 +1,53 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Esodo 3:11</title>
+                <author>Mosè</author>
+            </titleStmt>
+            <publicationStmt>
+                <p>Museo Digitale</p>
+            </publicationStmt>
+            <sourceDesc>
+                 <bibl>The Septuagint, Exodus 3:11</bibl>
+                 <bibl>Sir Lancelot Charles Lee Brenton (translator)</bibl>
+            </sourceDesc>
+        </fileDesc>
+         <profileDesc>
+            <langUsage>
+             <language ident="grc">Greco Antico</language>
+            </langUsage>
+            <creation>
+               <date type="timePeriod">III-II secolo a.C. circa</date>
+               <rs type="workType">Versi Biblici</rs>
+            </creation>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+           <ab>
+                <originalQuote>καὶ εἶπεν Μωυσῆς πρὸς τὸν θεόν· τίς εἰμι ἐγώ, ὅτι πορεύσομαι πρὸς Φαραώ, καὶ ὅτι ἐξάξω τοὺς υἱοὺς Ἰσραὴλ ἐξ Αἰγύπτου;</originalQuote>
+           </ab>
+          <ab>
+                <quote>"And Moses said to God: 'Who am I, that I should go to Pharaoh and bring the children of Israel out of Egypt?'"</quote>
+          </ab>
+
+             <ab>
+               <note>Riguardo al testo</note>
+                   <author>
+                        <persName>Mosè</persName>
+                    </author>
+                   <work>
+                        <title>Septuagint: Exodus 3:11</title>
+                     </work>
+                    <location>Antico Egitto</location>
+                    <date>III-II secolo a.C circa</date>
+                    <translationSource>The Septuagint, Exodus 3:11</translationSource>
+                    <translationBy>
+                        <persName>Sir Lancelot Charles Lee Brenton</persName>
+                     </translationBy>
+                     <originalLanguage>Greco Antico</originalLanguage>
+              </ab>
+        </body>
+    </text>
+</TEI>

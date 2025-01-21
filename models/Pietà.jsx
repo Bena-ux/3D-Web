@@ -1,17 +1,15 @@
-
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from '@react-three/fiber';
 import { a } from '@react-spring/three';
-import * as THREE from "three";
 
-import farneseScene from '../assets/3d/farnese.glb'
+import pietàScene from '../assets/3d/pietà.glb'
 
-const Farnese = ({isRotating, setIsRotating, setCurrentStage, metadata, ...props}) => {
-  const farneseRef = useRef();
+const Pietà = ({isRotating, setIsRotating, setCurrentStage, ...props}) => {
+  const pietàRef = useRef();
    
   const {gl, viewport } = useThree();
-  const { nodes, materials } = useGLTF(farneseScene);
+  const { nodes, materials } = useGLTF(pietàScene);
   
 const lastX =useRef(0);
 const rotationSpeed = useRef(0);
@@ -49,7 +47,7 @@ if(isRotating) {
 
     const delta = (clientX -lastX.current) / viewport.width;
 
-    farneseRef.current.rotation.y += delta * 0.01 * Math.PI;
+    pietàRef.current.rotation.y += delta * 0.01 * Math.PI;
     lastX.current = clientX;
     rotationSpeed.current = delta * 0.01 * Math.PI;
   }
@@ -58,10 +56,10 @@ if(isRotating) {
 const handleKeyDown = (e) => {
   if(e.key === 'ArrowLeft') {
     if(!isRotating) setIsRotating(true);
-    farneseRef.current.rotation.y += 0.01 * Math.PI;
+    pietàRef.current.rotation.y += 0.01 * Math.PI;
   } else if (e.key === 'ArrowRight') {
     if(!isRotating) setIsRotating(true);
-    farneseRef.current.rotation.y -= 0.01 * Math.PI;
+    pietàRef.current.rotation.y -= 0.01 * Math.PI;
   }
 }
 
@@ -71,7 +69,6 @@ const handleKeyUp = (e) => {
   }
 }
 
-
 useFrame(() => {
   if(!isRotating){
     rotationSpeed.current *= dampingFactor;
@@ -80,9 +77,9 @@ useFrame(() => {
       rotationSpeed.current = 0;
     }
 
-    farneseRef.current.rotation.y += rotationSpeed.current;
+    pietàRef.current.rotation.y += rotationSpeed.current;
   } else {
-    const rotation = farneseRef.current.rotation.y;
+    const rotation = pietàRef.current.rotation.y;
 
     const normalizedRotation = ((rotation % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
 
@@ -124,57 +121,18 @@ useEffect(() => {
 }, [gl, handlePointerDown, handlePointerUp, handlePointerMove])
 
   return (
-    <a.group ref={farneseRef} {...props} >
+    <a.group ref={pietàRef} {...props} >
       <group rotation={[-Math.PI / 2, 0, 0]} scale={1.17}>
-        <mesh
-          geometry={nodes.Object_2.geometry}
-          material={materials.material_0}
-        />
-        <mesh 
-          geometry={nodes.Object_3.geometry}
-          material={materials.material_0}
-        />
-        <mesh
-          geometry={nodes.Object_4.geometry}
-          material={materials.material_0}
-        />
-        <mesh
-          geometry={nodes.Object_5.geometry}
-          material={materials.material_0}
-        />
-        <mesh
-          geometry={nodes.Object_6.geometry}
-          material={materials.material_0}
-        />
-        <mesh
-          geometry={nodes.Object_7.geometry}
-          material={materials.material_0}
-        />
-        <mesh
-          geometry={nodes.Object_8.geometry}
-          material={materials.material_0}
-        />
-        <mesh
-          geometry={nodes.Object_9.geometry}
-          material={materials.material_0}
-        />
-        <mesh
-          geometry={nodes.Object_10.geometry}
-          material={materials.material_0}
-        />
-        <mesh
-          geometry={nodes.Object_11.geometry}
-          material={materials.material_0}
-        />
-        <mesh
-          geometry={nodes.Object_12.geometry}
-          material={materials.material_0}
-        />
+      <mesh
+      castShadow
+        receiveShadow
+        geometry={nodes.pietaLow20Group45050_PietaMarble_0.geometry}
+        material={materials.PietaMarble}
+      />
       </group>
-         {metadata && <pre>  {JSON.stringify(metadata, null, 2)} </pre>}
     </a.group>
   )
 }
 
 
-export default Farnese;
+export default Pietà;
