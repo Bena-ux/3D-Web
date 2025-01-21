@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const models = [
   { name: 'Ercole', path: '/discover/Ercole' },
   { name: 'Giambo', path: '/discover/Giambo' }, // Second model added
-  // Add more models as needed
+ 
 ];
 
 const Dropdown = () => {
