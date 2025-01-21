@@ -1,6 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import { Home, About, Projects, Contact, Discover, Gift, Giambologna, Ercole, Omph } from './pages';
+import { Home, About, Projects, Contact, Discover, Gift, Giambologna, Ercole, Omph, Pietas, Davide, Moses, Michelangelo } from './pages';
 import Navbar from './components/Navbar';
+import ContactSection from './components/ContactSection';
 import ScrollToTop from './components/ScrollToTop'; // Import ScrollToTop component
 import { useEffect, useState } from 'react'; // Import useState for managing theme state
 import './index.css'; // Ensure the global CSS with the day/night classes is imported
@@ -57,7 +58,12 @@ const App = () => {
           <Route path="/giambologna" element={<Giambologna />} />
           <Route path="/ercole" element={<Ercole />} />
           <Route path="/omph" element={<Omph />} />
+          <Route path="/pietas" element={<Pietas />} />
+          <Route path="/davide" element={<Davide />} />
+          <Route path="/moses" element={<Moses />} />
+          <Route path="/michelangelo" element={<Michelangelo />} />
         </Routes>
+        <ContactSection />
       </Router>
     </main>
   );

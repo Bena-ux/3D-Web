@@ -6,200 +6,315 @@
 
 /* Root variables for theme management */
 :root {
-  --day-bg: #f4f4f9;  
-  --accent-orange: #ff9f43;  
-  --day-text: #2e2e2e;
-  --night-bg: #1a1a1a;  
-  --night-text: #f4f4f9;
-  --glass-bg: rgba(255, 255, 255, 0.15);  
-  --glass-border: rgba(255, 255, 255, 0.2);  
-  --shadow-color: rgba(0, 0, 0, 0.1);  
-  --text-shadow-color: rgba(0, 153, 255, 0.3);  
+    --day-bg: #f4f4f9;
+    --accent-orange: #ff9f43;
+    --day-text: #2e2e2e;
+    --night-bg: #1a1a1a;
+    --night-text: #f4f4f9;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --text-shadow-color: rgba(0, 153, 255, 0.3);
+    --text-color: #000;
 }
 
 body.day-mode {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--day-bg);
-  color: var(--day-text);
-  transition: background-color 0.5s, color 0.5s;
-  overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--day-bg);
+    color: var(--day-text);
+    transition: background-color 0.5s, color 0.5s;
+    overflow-x: hidden;
+    --text-color: black;
 }
 
 body.night-mode {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--night-bg);
-  color: var(--night-text);
-  transition: background-color 0.5s, color 0.5s;
-  overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--night-bg);
+    color: var(--night-text);
+    transition: background-color 0.5s, color 0.5s;
+    overflow-x: hidden;
+    --text-color: white;
 }
 
+/* Apply cursor to all elements */
+body.day-mode * {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%23000000'><circle cx='10' cy='10' r='7'/></svg>") 10 10, auto !important;
+}
 
-h1, p {
-  margin: 0;
-  padding: 0;
+body.night-mode * {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='white'><circle cx='10' cy='10' r='7'/></svg>") 10 10, auto !important;
+}
+
+h1,
+p {
+    margin: 0;
+    padding: 0;
 }
 
 /* Glassmorphism styling */
 .glass-panel {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 4px 20px var(--shadow-color);
-  padding: 20px;
-  border-radius: 12px;
-  z-index: 10; /* Ensure panels are on top */
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
 }
 
 /* Button styles */
-button, .btn-style {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: var(--text-color);
-  padding: 12px 24px;
-  font-size: 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+button,
+.btn-style {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--text-color);
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-button:hover, .btn-style:hover {
-  background-color: var(--accent-orange);
-  color: white;
-  box-shadow: 0 0 15px var(--accent-orange);
+.btn-style:not(.morph-button-active):hover {
+    background-color: var(--accent-orange);
+    color: white;
+    box-shadow: 0 0 15px var(--accent-orange);
 }
 
 /* Section layouts */
-.relative {
-  position: relative;
-  width: 100%;
-}
-
-.absolute {
-  position: absolute;
-}
 
 .flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .w-full {
-  width: 100%;
+    width: 100%;
 }
 
 .h-screen {
-  height: 100vh;
+    height: 100vh;
 }
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
 /* Text styles */
 .text-5xl {
-  font-size: 3rem;
-  font-weight: bold;
+    font-size: 3rem;
+    font-weight: bold;
 }
 
 .text-lg {
-  font-size: 1.25rem;
+    font-size: 1.25rem;
 }
 
 .text-shadow {
-  text-shadow: 0 0 10px var(--text-shadow-color);
+    text-shadow: 0 0 10px var(--text-shadow-color);
 }
 
 /* Smooth transitions */
 .transition-all {
-  transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .opacity-0 {
-  opacity: 0;
+    opacity: 0;
 }
 
 .opacity-100 {
-  opacity: 1;
+    opacity: 1;
 }
 
 .transform {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 .translate-y-10 {
-  transform: translateY(10px);
+    transform: translateY(10px);
 }
 
 .translate-y-0 {
-  transform: translateY(0px);
+    transform: translateY(0px);
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .text-5xl {
-    font-size: 2rem;
-  }
+    .text-5xl {
+        font-size: 2rem;
+    }
 
-  .glass-panel {
-    background: rgba(255, 255, 255, 0.2); /* Example glass effect */
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 2rem;
-    border-radius: 10px;
-  }
+    .glass-panel {
+        background: rgba(255, 255, 255, 0.2);
+        /* Example glass effect */
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 2rem;
+        border-radius: 10px;
+    }
 }
 
 .glassmorphism {
-  background: rgba(255, 255, 255, 0.1); /* Light transparent background */
-  backdrop-filter: blur(10px); /* Blur effect */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    background: rgba(255, 255, 255, 0.1);
+    /* Light transparent background */
+    backdrop-filter: blur(10px);
+    /* Blur effect */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
 }
 
 .fade-in {
-  opacity: 1;
-  transform: translateX(-20px); /* Slide left */
-  transition: opacity 1s ease, transform 1s ease;
+    opacity: 1;
+    transform: translateX(-20px);
+    /* Slide left */
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .fade-out {
-  opacity: 0;
-  transform: translateX(0);
+    opacity: 0;
+    transform: translateX(0);
 }
 
 .glass-container {
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.2); /* Light frosted effect */
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 8px;
-  max-width: 300px;
-  transition: opacity 1s ease, transform 1s ease;
-  opacity: 0; /* Initially hidden */
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    /* Light frosted effect */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    max-width: 300px;
+    transition: opacity 1s ease, transform 1s ease;
+    opacity: 0;
+    /* Initially hidden */
 }
 
 .info-box {
-  position: fixed; /* Fixed to the viewport */
-  top: 20%; /* Adjust the position as needed */
-  left: 50%;
-  transform: translateX(-50%);
-  
-  background: rgba(255, 255, 255, 0.1); /* Slightly transparent white */
-  backdrop-filter: blur(10px); /* Blurs the background */
-  border-radius: 10px;
-  padding: 20px;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for the glass effect */
-  z-index: 10; /* Ensure it appears above other elements */
-  max-width: 500px; /* Optional, limits width */
-  width: 80%; /* Optional, adjust width as needed */
+    position: fixed;
+    /* Fixed to the viewport */
+    top: 20%;
+    /* Adjust the position as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    /* Slightly transparent white */
+    backdrop-filter: blur(10px);
+    /* Blurs the background */
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Light border for the glass effect */
+    z-index: 10;
+    /* Ensure it appears above other elements */
+    max-width: 500px;
+    /* Optional, limits width */
+    width: 80%;
+    /* Optional, adjust width as needed */
 }
 
+.theme-switch-container {
+    width: 60px;
+    height: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
 
+.theme-switch-button {
+    position: absolute;
+    left: 3px;
+    z-index: 1;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.theme-switch-container::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 5px;
+    height: 20px;
+    border-radius: 30px;
+    background-color: transparent;
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+body.night-mode .theme-switch-container::before {
+    background-color: #ff9f43;
+    transform: translateX(0px);
+    width: 50px;
+}
+
+/* Add this to your existing CSS file */
+.panel-section-title {
+    margin-bottom: 0.5rem;
+}
+
+.panel-item {
+    margin-bottom: 0.2rem;
+}
+
+.morph-button-active {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    color: var(--text-color);
+    animation: morphButton 0.3s ease-in-out forwards;
+    /* Transition on animation */
+}
+
+@keyframes morphButton {
+    from {
+        padding: 12px 24px;
+    }
+
+    to {
+        padding: 1rem;
+    }
+}
+
+.btn-style:not(.morph-button-active):hover {
+    background-color: var(--accent-orange);
+    color: white;
+    box-shadow: 0 0 15px var(--accent-orange);
+}
+
+.btn-style {
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+.glass-content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Styles for text panel */
+
+.text-panel-content {
+    max-height: 400px; /* Set a max height if needed */
+    overflow-y: auto;
+    /* Add a scroll if content exceeds the height*/
+}
+
+.paragraph-style {
+    margin-bottom: 10px; /* Add spacing between the paragraphs */
+}
