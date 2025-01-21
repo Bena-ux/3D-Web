@@ -7,7 +7,7 @@ const Navbar = () => {
     const [isDayMode, setIsDayMode] = useState(true);
 
 
-    // Initialize theme based on time of day
+    
     useEffect(() => {
         const currentHour = new Date().getHours();
         const initialMode = currentHour >= 7 && currentHour < 19;
@@ -17,14 +17,14 @@ const Navbar = () => {
         document.body.classList.toggle('night-mode', !initialMode);
     }, []);
 
-    // Toggle theme
+  
     const toggleTheme = () => {
         setIsDayMode((prev) => !prev);
         document.body.classList.toggle('day-mode');
         document.body.classList.toggle('night-mode');
     };
 
-    // Open/close dropdowns
+   
      const handleMouseEnter = () => {
         setIsDropdownOpen(true);
       };
@@ -53,9 +53,9 @@ const Navbar = () => {
                     Museo Digitale
                 </Link>
 
-                {/* Centered Navigation Links */}
+                
                 <div className="flex items-center space-x-6 mx-auto">
-                    {/* Discover with Dropdown */}
+                    
                     <div
                         className="relative"
                         onMouseEnter={handleMouseEnter}
@@ -84,7 +84,7 @@ const Navbar = () => {
                                     Ercole
                                 </Link>
 
-                                {/* Submenu for Ercole */}
+                               
                                 {activeSubmenu === 'ercole' && (
                                     <div
                                         className={`absolute left-full top-0 mt-1 w-48 border-gray-500 rounded-md shadow-lg z-50 transition-all duration-300 ease-in-out transform backdrop-blur-lg bg-white/20 border border-white/30`}
@@ -121,7 +121,7 @@ const Navbar = () => {
                                 >
                                     Michelangelo
                                 </Link>
-                                {/* Submenu for Michelangelo */}
+                               
                                 {activeSubmenu === 'michelangelo' && (
                                     <div
                                         className={`absolute left-full top-0 mt-1 w-48 border-gray-500 rounded-md shadow-lg z-50 transition-all duration-300 ease-in-out transform backdrop-blur-lg bg-white/20 border border-white/30`}
@@ -150,7 +150,7 @@ const Navbar = () => {
                         </div>
                     </div>
 
-                    {/* Other Links */}
+                    
                     <Link
                         to="/about"
                         className={`text-lg font-bold ${isDayMode ? 'text-black' : 'text-white'}`}
@@ -170,7 +170,7 @@ const Navbar = () => {
                         Ricevi un Regalo
                     </Link>
                 </div>
-                {/* Theme Toggle Button with Slider and Circle */}
+                
                 <div className="flex items-center mr-4">
                     <div
                         className={`relative w-14 h-7 bg-gray-300 rounded-full transition-colors duration-300 ${
